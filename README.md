@@ -9,7 +9,7 @@ Pull the image
 
 Run the image
 
-	sudo docker run -it -p 50030:50030 seppinho/cdh5-hadoop-mrv1:latest
+	docker run -it -p 50030:50030 seppinho/cdh5-hadoop-mrv1:latest
 
 
 Execute WordCount inside the Docker container
