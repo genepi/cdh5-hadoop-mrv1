@@ -13,10 +13,11 @@ Run the image
 	docker run -it -p 50030:50030 seppinho/cdh5-hadoop-mrv1:latest
 
 
-Execute WordCount inside the started Docker container
+Give it a try and execute WordCount inside the started Docker container
 
 	sh /usr/bin/execute-wordcount.sh
 
-Connect to the MapReduce web interface from your local OS
+
+Connect to the MapReduce web interface from your local OS to see the executed job
 
     http://localhost:50030
