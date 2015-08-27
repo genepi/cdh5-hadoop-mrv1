@@ -2,13 +2,13 @@ FROM ubuntu:14.04
 
 MAINTAINER Sebastian Schoenherr <sebastian.schoenherr@i-med.ac.at>
 
-#Root Dir
+# Change to root dir
 WORKDIR /
 
 # Install some basic tools
 RUN sudo apt-get install wget software-properties-common -y
 
-#Install Prerequistes
+# Install Prerequistes
 RUN echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
 RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
 RUN sudo add-apt-repository ppa:webupd8team/java
@@ -21,16 +21,16 @@ RUN sudo apt-get update -y
 # Install Java v7
 RUN sudo apt-get install oracle-java7-installer -y
 
-#Install latest CDH5 YARN
+# Install latest CDH5 YARN
 RUN sudo apt-get install hadoop-0.20-conf-pseudo -y
 RUN sudo -u hdfs hdfs namenode -format
 
-#Install a new user
+# Add a hadoop user (Cloudgene) to execute jobs
 RUN sudo useradd -ms /bin/bash cloudgene
 
 # copy script to start HDFS and MapReduce
-COPY conf/run-hadoop.sh /usr/bin/run-hadoop.sh
-RUN sudo chmod +x /usr/bin/run-hadoop.sh
+COPY conf/run-hadoop-initial.sh /usr/bin/run-hadoop-initial.sh
+RUN sudo chmod +x /usr/bin/run-hadoop-initial.sh
 
 # generate some HDFS directories at startup
 COPY conf/init-hdfs.sh /usr/bin/init-hdfs.sh
@@ -50,6 +50,3 @@ EXPOSE 50010 50020 50070 50075 50090
 
 #MapReduce Ports
 EXPOSE 50030 50050 50070
-
-# run the start script when launching a docker container
-CMD ["/usr/bin/run-hadoop.sh"]

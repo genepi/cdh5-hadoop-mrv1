@@ -8,9 +8,9 @@ Pull the image
 	docker pull seppinho/cdh5-hadoop-mrv1:latest
 	
 
-Run the image
+Run the image as a new container
 
-	docker run -it -p 50030:50030 seppinho/cdh5-hadoop-mrv1:latest
+	docker run -it -p 50030:50030 seppinho/cdh5-hadoop-mrv1:latest run-hadoop-initial.sh
 
 
 Give it a try and execute "WordCount" inside the started Docker container
