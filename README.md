@@ -21,6 +21,6 @@ This Docker image allows you to execute Hadoop jobs with the MapReduce framework
 
 
 
-## Connect to the MapReduce web interface from your local OS to see the status of your executed job
+## Connect to the MapReduce web interface
 
     http://<ip-address>:50030
