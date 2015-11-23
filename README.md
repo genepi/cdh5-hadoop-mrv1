@@ -15,7 +15,7 @@ This Docker image allows you to execute Hadoop jobs with the MapReduce framework
 
 
 
-## Execute "WordCount" inside the started Docker container as user "cloudgene"
+## Execute WordCount
 
 	sh /usr/bin/execute-wordcount.sh
 
@@ -23,4 +23,4 @@ This Docker image allows you to execute Hadoop jobs with the MapReduce framework
 
 ## Connect to the MapReduce web interface from your local OS to see the status of your executed job
 
-    http://localhost:50030
+    http://<ip-address>:50030
