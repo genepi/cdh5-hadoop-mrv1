@@ -1,5 +1,4 @@
-# calculates the amount of processors and sets the map and reduce tasks accordingly
+#!/bin/bash
+# calculates the amount of processors and sets the map and reduce tasks accordingly in mapred-site.xml
 line=$(($(grep -c ^processor /proc/cpuinfo)-1))
 sed s/AMOUNT/$line/ /usr/bin/mapred-site-template.xml > /etc/hadoop/conf.pseudo.mr1/mapred-site.xml
-
-
