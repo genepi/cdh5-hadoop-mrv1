@@ -1,7 +1,7 @@
 #!/bin/bash
 # Setting up HDFS and MapReduce at startup!
 
-# start HDFS and Service generate all necessary directories
+# start the HDFS Service generate all necessary directories
 for x in `cd /etc/init.d ; ls hadoop-hdfs-*` ; do sudo service $x start ; done
 sudo /usr/bin/init-hdfs.sh
 
