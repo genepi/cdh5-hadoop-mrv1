@@ -6,6 +6,7 @@ MAINTAINER Sebastian Schoenherr <sebastian.schoenherr@i-med.ac.at>
 WORKDIR /
 
 # Install some basic tools
+RUN sudo apt-get update -y
 RUN sudo apt-get install wget apt-transport-https software-properties-common -y
 
 # Install Prerequistes
