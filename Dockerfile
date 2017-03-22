@@ -16,7 +16,7 @@ RUN sudo add-apt-repository ppa:webupd8team/java
 RUN wget http://archive.cloudera.com/cdh5/one-click-install/trusty/amd64/cdh5-repository_1.0_all.deb -O cdh5-repository_1.0_all.deb
 RUN sudo dpkg -i cdh5-repository_1.0_all.deb
 
-# update packages
+# update packages 
 RUN sudo apt-get update -y
 
 # Install Java v7
