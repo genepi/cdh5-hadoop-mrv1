@@ -1,4 +1,4 @@
-# Creating a Hadoop MapReduce (MRv1) Docker Image
+# Creating a Hadoop MapReduce (MRv1) Docker Image 
 
 This Docker image allows you to execute Hadoop jobs with the MapReduce framework (MRv1, the "old" MapReduce) based on the currently latest Cloudera version (CDH5).
 
