@@ -22,7 +22,7 @@ RUN sudo dpkg -i pandoc-1.19.2.1-1-amd64.deb
 # update packages 
 RUN sudo apt-get update -y
 
-# Install Java v7
+# Install Java v8
 RUN sudo apt-get install oracle-java8-installer jsvc git maven -y
 
 # Install latest CDH5 MapReduce 1
