@@ -42,8 +42,9 @@ RUN sudo chmod +x /usr/bin/init-hdfs.sh
 
 # Use a template to calculate the amount of map and reduce tasks depending on amount of cores
 COPY conf/mapred-site-template.xml /usr/bin/mapred-site-template.xml
-COPY conf/adapt-mapred-config.sh /usr/bin/adapt-mapred-config.sh
-RUN sudo chmod +x /usr/bin/adapt-mapred-config.sh
+COPY conf/core-site-template.xml /usr/bin/core-site-template.xml
+COPY conf/adapt-config.sh /usr/bin/adapt-config.sh
+RUN sudo chmod +x /usr/bin/adapt-config.sh
 
 
 COPY conf/execute-wordcount.sh /usr/bin/execute-wordcount.sh
