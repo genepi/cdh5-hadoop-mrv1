@@ -4,7 +4,7 @@
 <configuration>
   <property>
     <name>mapred.job.tracker</name>
-    <value>localhost:8021</value>
+    <value>HOSTNAME:8021</value>
   </property>
  
  <property>
