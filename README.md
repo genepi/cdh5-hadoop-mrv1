@@ -25,9 +25,9 @@ This Docker image allows you to execute Hadoop jobs with the MapReduce framework
 
     http://<ip-address>:50030
 
-### Connect to Cloudgene
-The new version of Cloudgene allows to run it locally. 
-To connect your local instance to Docker get your container hostname and it to your local hosts file:
+#### Cloudgene
+The new version of Cloudgene allows to connect to a remote Hadoop cluster.
+To connect it with a Hadoop Docker container add its hosts entry (e.g. 172.17.0.2 cloudgene) to your local hosts file. Add hostname to your Cloudgene settings.yaml file (e.g. hostname: cloudgene)
 
     cat /etc/hosts 
     
