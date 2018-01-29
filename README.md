@@ -23,7 +23,7 @@ This Docker image allows you to execute Hadoop jobs with the MapReduce framework
 
 ### Connect to the MapReduce web interface
 
-    http://<ip-address>:50030
+    http://cloudgene:50030
 
 #### Cloudgene
 The new version of Cloudgene allows to connect to a remote Hadoop cluster.
