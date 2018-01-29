@@ -27,7 +27,6 @@ RUN sudo apt-get install oracle-java8-installer jsvc git maven -y
 
 # Install latest CDH5 MapReduce 1
 RUN sudo apt-get install hadoop-0.20-conf-pseudo -y
-RUN sudo -u hdfs hdfs namenode -format
 
 # Add a hadoop user (Cloudgene) to execute jobs
 RUN sudo useradd -ms /bin/bash cloudgene
@@ -46,6 +45,11 @@ COPY conf/core-site-template.xml /usr/bin/core-site-template.xml
 COPY conf/adapt-config.sh /usr/bin/adapt-config.sh
 RUN sudo chmod +x /usr/bin/adapt-config.sh
 
+COPY conf/hdfs-site.xml /etc/hadoop/conf/hdfs-site.xml
+
+# Create a /data directory to make cluster persistent
+RUN mkdir /data
+VOLUME ["/data/"]
 
 COPY conf/execute-wordcount.sh /usr/bin/execute-wordcount.sh
 RUN sudo chmod +x /usr/bin/execute-wordcount.sh
