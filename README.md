@@ -11,7 +11,7 @@ This Docker image allows you to execute Hadoop jobs with the MapReduce framework
 
 ### Run a new container (ends with /bin/bash)
 
-	docker run -it -h cloudgene -p 50030:50030 seppinho/cdh5-hadoop-mrv1:latest run-hadoop-initial.sh
+	docker run -it -h cloudgene -p 50030:50030 seppinho/cdh5-hadoop-mrv1:latest run-hadoop
 
 
 

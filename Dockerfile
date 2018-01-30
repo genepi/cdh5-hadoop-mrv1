@@ -31,18 +31,18 @@ RUN sudo apt-get install hadoop-0.20-conf-pseudo -y
 # Add a hadoop user (Cloudgene) to execute jobs
 RUN sudo useradd -ms /bin/bash cloudgene
 
-# copy script to start HDFS and MapReduce
-COPY conf/run-hadoop-initial.sh /usr/bin/run-hadoop-initial.sh
-RUN sudo chmod +x /usr/bin/run-hadoop-initial.sh
+# copy script to start Hadoop
+COPY hadoop/start-hadoop /usr/bin/start-hadoop
+RUN sudo chmod +x /usr/bin/start-hadoop
 
 # generate some HDFS directories at startup
-COPY conf/init-hdfs.sh /usr/bin/init-hdfs.sh
+COPY scripts/init-hdfs.sh /usr/bin/init-hdfs.sh
 RUN sudo chmod +x /usr/bin/init-hdfs.sh
 
 # Use a template to calculate the amount of map and reduce tasks depending on amount of cores
 COPY conf/mapred-site-template.xml /usr/bin/mapred-site-template.xml
 COPY conf/core-site-template.xml /usr/bin/core-site-template.xml
-COPY conf/adapt-config.sh /usr/bin/adapt-config.sh
+COPY scripts/adapt-config.sh /usr/bin/adapt-config.sh
 RUN sudo chmod +x /usr/bin/adapt-config.sh
 
 COPY conf/hdfs-site.xml /etc/hadoop/conf/hdfs-site.xml
@@ -51,8 +51,10 @@ COPY conf/hdfs-site.xml /etc/hadoop/conf/hdfs-site.xml
 RUN mkdir /data
 VOLUME ["/data/"]
 
-COPY conf/execute-wordcount.sh /usr/bin/execute-wordcount.sh
+COPY scripts/execute-wordcount.sh /usr/bin/execute-wordcount.sh
 RUN sudo chmod +x /usr/bin/execute-wordcount.sh
+
+ENV EXEC_BASH="false"
 
 #HDFS Ports
 EXPOSE 50010 50020 50070 50075 50090
