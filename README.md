@@ -5,7 +5,7 @@ This Docker image allows you to execute Hadoop jobs with the MapReduce framework
 
 ### Pull the image
 
-	docker pull seppinho/cdh5-hadoop-mrv1:latest
+	docker pull genepi/cdh5-hadoop-mrv1:latest
 	
 
 
