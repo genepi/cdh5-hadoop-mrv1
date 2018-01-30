@@ -57,7 +57,7 @@ RUN sudo chmod +x /usr/bin/execute-wordcount.sh
 ENV EXEC_BASH="false"
 
 #HDFS Ports
-EXPOSE 50010 50020 50070 50075 50090 50091
+EXPOSE 50010 50020 50070 50075 50090
 
 #MapReduce Ports
 EXPOSE 50030 50050 50070
