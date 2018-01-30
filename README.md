@@ -1,5 +1,9 @@
 ## Creating a Hadoop MapReduce (MRv1) Docker Image 
 
+[![Docker Build Status](https://img.shields.io/docker/build/genepi/cdh5-hadoop-mrv1.svg)](https://hub.docker.com/r/genepi/cdh5-hadoop-mrv1)
+[![Docker Pulls](https://img.shields.io/docker/pulls/genepi/cdh5-hadoop-mrv1.svg)](https://hub.docker.com/r/genepi/cdh5-hadoop-mrv1)
+
+
 This Docker image allows you to execute Hadoop jobs with the MapReduce framework (MRv1, the "old" MapReduce) based on the currently latest Cloudera version (CDH5). 
 
 
