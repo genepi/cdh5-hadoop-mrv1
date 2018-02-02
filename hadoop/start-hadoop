@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # adapt config
-sudo /usr/bin/adapt-config.sh
+sudo /usr/bin/adapt-config.sh ${DOCKER_CORES}
 
 # if /data/hadoop exists --> no namenode format needed
 if [ ! -d "/data/hadoop" ]; then

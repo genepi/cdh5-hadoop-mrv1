@@ -55,6 +55,7 @@ COPY scripts/execute-wordcount.sh /usr/bin/execute-wordcount.sh
 RUN sudo chmod +x /usr/bin/execute-wordcount.sh
 
 ENV EXEC_BASH="false"
+ENV DOCKER_CORES="0"
 
 #HDFS Ports
 EXPOSE 50010 50020 50070 50075 50090
