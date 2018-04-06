@@ -8,6 +8,12 @@ else
    CORES=$(($(grep -c ^processor /proc/cpuinfo)-2))
 fi
 
+if[CORES < 1]
+then
+echo Setting cores to 1
+CORES = 1
+fi
+
 # set HOSTNAME
 HOST=$(grep "$HOSTNAME" /etc/hosts|awk '{print $1}')
 
