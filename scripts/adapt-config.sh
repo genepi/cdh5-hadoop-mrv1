@@ -8,10 +8,9 @@ else
    CORES=$(($(grep -c ^processor /proc/cpuinfo)-2))
 fi
 
-if [CORES < 1]
-then
+if [ "$CORES" -lt 1 ]; then
 echo Setting cores to 1
-CORES = 1
+CORES="1"
 fi
 
 # set HOSTNAME
