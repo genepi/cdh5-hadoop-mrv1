@@ -10,20 +10,17 @@ RUN sudo apt-get update -y
 RUN sudo apt-get install libgmp10 wget apt-transport-https software-properties-common -y
 
 # Install Prerequistes
-RUN echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
-RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
-RUN sudo add-apt-repository ppa:webupd8team/java
 RUN wget http://archive.cloudera.com/cdh5/one-click-install/trusty/amd64/cdh5-repository_1.0_all.deb -O cdh5-repository_1.0_all.deb
 RUN sudo dpkg -i cdh5-repository_1.0_all.deb
 
 RUN wget https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb -O pandoc-1.19.2.1-1-amd64.deb
 RUN sudo dpkg -i pandoc-1.19.2.1-1-amd64.deb
-
+RUN sudo add-apt-repository ppa:openjdk-r/ppa
 # update packages 
 RUN sudo apt-get update -y
 
 # Install Java v8
-RUN sudo apt-get install oracle-java8-installer jsvc git maven -y
+RUN sudo apt-get install openjdk-8-jdk jsvc git maven -y
 
 # Install latest CDH5 MapReduce 1
 RUN sudo apt-get install hadoop-0.20-conf-pseudo -y
