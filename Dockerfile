@@ -22,6 +22,8 @@ RUN sudo apt-get update -y
 # Install Java v8 and set as default
 RUN sudo apt-get install openjdk-8-jdk jsvc git maven -y
 RUN sudo update-java-alternatives -s java-1.8.0-openjdk-amd64
+RUN sudo rm /usr/lib/jvm/default-java
+RUN sudo ln -s java-8-openjdk-amd64/ /usr/lib/jvm/default-java
 
 # Install latest CDH5 MapReduce 1
 RUN sudo apt-get install hadoop-0.20-conf-pseudo -y
